@@ -42,7 +42,7 @@ is passed to `group_by()`. Be careful with that second variable is `...`
 so you have to explicitly declare an argument name for third. (`.vars`)
 
 When you want summaries for all of columns in a data frame, you can just
-pass the data to first argument. Then it makes summaries for all of
+pass the data to a first argument. Then it makes summaries for all of
 numeric columns.
 
 ``` r

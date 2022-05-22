@@ -624,7 +624,7 @@ body {
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true"></a><span class="co">#&gt; 1     0    19     17.1   3.83    326.</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true"></a><span class="co">#&gt; 2     1    13     24.4   6.17    317.</span></span></code></pre></div>
 <p>Default argument for <code>.vars</code> is <code>where(is.numeric)</code> and second variable is passed to <code>group_by()</code>. Be careful with that second variable is <code>...</code> so you have to explicitly declare an argument name for third. (<code>.vars</code>)</p>
-<p>When you want summaries for all of columns in a data frame, you can just pass the data to first argument. Then it makes summaries for all of numeric columns.</p>
+<p>When you want summaries for all of columns in a data frame, you can just pass the data to a first argument. Then it makes summaries for all of numeric columns.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">my_summarise_across</span>(sleep)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="co">#&gt; # A tibble: 1 x 4</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a><span class="co">#&gt;   extra_n extra_mean extra_sd extra_sum</span></span>
