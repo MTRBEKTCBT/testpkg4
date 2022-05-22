@@ -6,7 +6,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-testpkg4 is my fourth package that aims to collects convenent simple
+testpkg4 is my fourth package that aims to collects convenient simple
 functions to solve daily analysis.
 
 ## Installation

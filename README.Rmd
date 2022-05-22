@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 testpkg4 is my fourth package that aims to collects 
-convenent simple functions to solve daily analysis.
+convenient simple functions to solve daily analysis.
 
 ## Installation
 
