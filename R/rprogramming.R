@@ -18,9 +18,9 @@ my_summarise_by <- function(.data, .var, ...) {
 #' Summry statistics using group and across.
 #'
 #' @param .data Data frame
+#' @param ... Grouping variable
 #' @param .vars Variables to get summary.
 #' Default value is all numeric columns.
-#' @param ... Grouping variable
 #' @export
 my_summarise_across <- function(.data, ..., .vars = tidyselect::vars_select_helpers$where(is.numeric)) {
 

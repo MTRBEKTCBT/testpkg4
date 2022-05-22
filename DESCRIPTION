@@ -19,6 +19,7 @@ Imports:
     magrittr,
     rlang,
     stats,
+    testpkg4,
     tibble,
     tidyselect,
     utils

@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of testpkg4 is to …
+testpkg4 is my fourth package that aims to collects convenent simple
+functions to solve daily analysis.
 
 ## Installation
 
@@ -20,36 +21,33 @@ devtools::install_github("MTRBEKTCBT/testpkg4")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to calculate basic summary
+statistics.
 
 ``` r
 library(testpkg4)
-## basic example code
+suppressPackageStartupMessages(library(dplyr))
+
+my_summarise_across(mtcars, am, .vars = mpg)
+#> # A tibble: 2 × 5
+#>      am mpg_n mpg_mean mpg_sd mpg_sum
+#>   <dbl> <int>    <dbl>  <dbl>   <dbl>
+#> 1     0    19     17.1   3.83    326.
+#> 2     1    13     24.4   6.17    317.
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+Default argument for `.vars` is `where(is.numeric)` and second variable
+is passed to `group_by()`. Be careful with that second variable is `...`
+so you have to explicitly declare an argument name for third. (`.vars`)
+
+When you want summaries for all of columns in a data frame, you can just
+pass the data to the function. Then it makes summaries for all of
+numeric columns.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+my_summarise_across(sleep)
+#> # A tibble: 1 × 4
+#>   extra_n extra_mean extra_sd extra_sum
+#>     <int>      <dbl>    <dbl>     <dbl>
+#> 1      20       1.54     2.02      30.8
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
