@@ -1,6 +1,6 @@
 Package: testpkg4
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Calculate Summary Statistics
 Version: 0.1.0
 Author: MTRBEKTCBT
 Maintainer: The package maintainer <yourself@somewhere.net>
@@ -15,4 +15,10 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
-    dplyr
+    dplyr,
+    magrittr,
+    rlang,
+    stats,
+    tibble,
+    tidyselect,
+    utils
