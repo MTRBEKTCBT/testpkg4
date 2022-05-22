@@ -22,15 +22,15 @@ my_summarise_by <- function(.data, .var, ...) {
 #' @param .vars Variables to get summary.
 #' Default value is all numeric columns.
 #' @export
-my_summarise_across <- function(.data, ..., .vars = tidyselect::vars_select_helpers$where(is.numeric)) {
-
+my_summarise_across <- function(.data, ...,
+ .vars = tidyselect::vars_select_helpers$where(is.numeric)) {
   .data %>%
     group_by(...) %>%
     summarise(across({{ .vars }}, list(
       n = ~ n(),
-      mean = ~mean(.x, na.rm = TRUE),
-      sd = ~sd(.x, na.rm = TRUE),
-      sum = ~sum(.x, na.rm = TRUE)
+      mean = ~ mean(.x, na.rm = TRUE),
+      sd = ~ sd(.x, na.rm = TRUE),
+      sum = ~ sum(.x, na.rm = TRUE)
     )))
 }
 utils::globalVariables("where")

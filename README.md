@@ -4,6 +4,7 @@
 # testpkg4
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 testpkg4 is my fourth package that aims to collects convenient simple
@@ -29,7 +30,7 @@ library(testpkg4)
 suppressPackageStartupMessages(library(dplyr))
 
 my_summarise_across(mtcars, am, .vars = mpg)
-#> # A tibble: 2 × 5
+#> # A tibble: 2 x 5
 #>      am mpg_n mpg_mean mpg_sd mpg_sum
 #>   <dbl> <int>    <dbl>  <dbl>   <dbl>
 #> 1     0    19     17.1   3.83    326.
@@ -41,12 +42,12 @@ is passed to `group_by()`. Be careful with that second variable is `...`
 so you have to explicitly declare an argument name for third. (`.vars`)
 
 When you want summaries for all of columns in a data frame, you can just
-pass the data to the function. Then it makes summaries for all of
+pass the data to first argument. Then it makes summaries for all of
 numeric columns.
 
 ``` r
 my_summarise_across(sleep)
-#> # A tibble: 1 × 4
+#> # A tibble: 1 x 4
 #>   extra_n extra_mean extra_sd extra_sum
 #>     <int>      <dbl>    <dbl>     <dbl>
 #> 1      20       1.54     2.02      30.8
